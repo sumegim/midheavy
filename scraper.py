@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import os
 import urllib.request
+import html
 
 # Read URLs from db.txt
 with open('C:\\Users\\sumeg\\Documents\\repos\\midheavy\\db.txt', 'r') as f:
@@ -29,8 +30,7 @@ for url in urls:
     # To select the meta tag with property 'og:description'
     meta_og_description = soup.select_one('meta[property="og:description"]')
     # To get the content of the meta tag
-    short_description = meta_og_description['content'] if meta_og_description else None
-    
+    short_description = html.unescape(meta_og_description['content']) if meta_og_description else None
     # To select the meta tag with property 'og:image'
     meta_og_image = soup.select_one('meta[property="og:image"]')
     # To get the content of the meta tag
