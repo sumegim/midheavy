@@ -12,8 +12,7 @@ for (let i = 0; i < releases.length; i++) {
     const img = document.createElement('img');
     img.setAttribute('src', releases[i] + '/image.jpg');
 
-    link.appendChild(img);
-    tile.appendChild(link);
+    tile.appendChild(img);
     
     const middle = document.createElement('div');
     middle.classList.add('middle');
@@ -21,8 +20,9 @@ for (let i = 0; i < releases.length; i++) {
     const text = document.createElement('div');
     text.classList.add('text');
     text.innerText = descs[i];
+    link.appendChild(text)
 
-    middle.appendChild(text);
+    middle.appendChild(link);
     tile.appendChild(middle);
     container.appendChild(tile);
 }
