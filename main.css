@@ -84,3 +84,15 @@ body {
 .text-link:hover {
     color: inherit; /* Keep the link color the same when hovered over */
 }
+
+.github-link {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.github-link a img {
+    width: 50px;
+    height: 50px;
+    opacity: 0.8; /* Make the logo semi-transparent */
+}
