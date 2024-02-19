@@ -1,8 +1,4 @@
 URL: https://boardgamegeek.com/boardgame/297478/cortex-challenge
 Name: Cortex + Challenge
-Description: Cortex + Challenge tests up to 2-6  players&rsquo; memory, cognition, and sensory perception. It even includes texture cards that are used during &quot;touch challenges&quot; in which players must guess what they are feeling, adding a unique element that is often neglected in games.
-
-Winning challenges allows players to add pieces to their brain 3D puzzle which they must complete before their opponents in order to win the game.
-
-This game contains 170 new cards, including 9 new challenges and can be mixed with cortex 1, cortex 2, and/ cortex 3
+Description: Cortex + Challenge tests up to 2-6  players memory, cognition, and sensory perception.
 Image URL: https://cf.geekdo-images.com/ook-qcEW-PJklmwkmXgI8Q__opengraph/img/3pZCvfYfdPXi2I4qXqFXtgnelr0=/0x122:466x366/fit-in/1200x630/filters:strip_icc()/pic5142950.jpg
