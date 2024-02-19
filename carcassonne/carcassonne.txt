@@ -1,0 +1,4 @@
+URL: https://boardgamegeek.com/boardgame/822/carcassonne
+Name: Carcassonne
+Description: Shape the medieval landscape of France, claiming cities, monasteries and farms.
+Image URL: https://cf.geekdo-images.com/okM0dq_bEXnbyQTOvHfwRA__opengraph/img/_etv3Vtk4LjuLY6a7Y2vN3-DNSg=/0x0:1812x951/fit-in/1200x630/filters:strip_icc()/pic6544250.png
