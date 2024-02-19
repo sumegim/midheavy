@@ -8,6 +8,8 @@ for (let i = 0; i < releases.length; i++) {
     
     const link = document.createElement('a');
     link.setAttribute('href', urls[i]);
+    link.classList.add('text-link'); // Add a class to the link elements
+
 
     const img = document.createElement('img');
     img.setAttribute('src', releases[i] + '/image.jpg');

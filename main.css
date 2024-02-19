@@ -70,3 +70,12 @@ body {
     0% {opacity: 0;}
     100% {opacity: 1;}
 }
+
+.text-link {
+    color: inherit; /* Make the link color the same as the text color */
+    text-decoration: none; /* Remove the underline */
+}
+
+.text-link:hover {
+    color: inherit; /* Keep the link color the same when hovered over */
+}
