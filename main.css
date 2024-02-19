@@ -53,7 +53,12 @@ body {
 }
 
 .tile:hover .middle {
-    opacity: 1;
+    opacity: 0.9; /* Adjust the opacity to your liking */
+    background-color: #000; /* Add a background color to the middle div */
+}
+
+.tile:hover img {
+    transform: scale(1.1);
 }
 
 .text {
