@@ -2,7 +2,7 @@ id: schnapsen
 name: Schnapsen
 description: Score points by marrying off kings and queens, and by winning value cards
   in tricks.
-q_rules: ''
+q_rules: 'https://en.wikipedia.org/wiki/Schnapsen'
 links: []
 labels: []
 url: https://boardgamegeek.com/boardgame/11582/schnapsen

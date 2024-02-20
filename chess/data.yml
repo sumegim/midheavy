@@ -1,7 +1,7 @@
 id: chess
 name: Chess
 description: Checkmate your opponent in this timeless abstract.
-q_rules: ''
+q_rules: 'https://en.wikipedia.org/wiki/Rules_of_chess'
 links: []
 labels: []
 url: https://boardgamegeek.com/boardgame/171/chess
