@@ -3,14 +3,12 @@ from bs4 import BeautifulSoup
 import os
 import urllib.request
 import html
-import json
 
 # Read URLs from db.txt
 with open('C:\\Users\\sumeg\\Documents\\repos\\midheavy\\db.txt', 'r') as f:
     urls = f.read().splitlines()
 
-results = []
-full_refresh = True
+full_refresh = False
 for url in urls:
     id = url.split('/')[-1]
     if not full_refresh and os.path.exists(id):
@@ -24,6 +22,7 @@ for url in urls:
     meta_og_title = soup.select_one('meta[property="og:title"]')
     # To get the content of the meta tag
     title = meta_og_title['content'] if meta_og_title else None
+
     
     if not os.path.exists(id):
         os.mkdir(id)
@@ -40,7 +39,6 @@ for url in urls:
     # Save name and description to a text file
     with open(f'{id}\{id}.txt', 'w') as f:
         f.write(f'URL: {url}\nName: {title}\nDescription: {short_description}\nImage URL: {image_url}\n')
-    results.append({'id': id, 'url': url, 'title': title, 'short_description': short_description, 'image_url': image_url, 'image_url_local': f'{id}\image.jpg', 'q_rules' : []})
 
     # Assuming 'image_url' is the URL of the image
     response = requests.get(image_url, stream=True)
@@ -51,9 +49,3 @@ for url in urls:
         with open(f'{id}\image.jpg', 'wb') as file:
             for chunk in response.iter_content(1024):
                 file.write(chunk)
-
-with open("script.js") as f:
-    lines = f.readlines()
-lines[0] = f'data = {results} \n'
-with open("script.js", "w") as f:
-    f.writelines(lines)
