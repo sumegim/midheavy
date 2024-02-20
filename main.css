@@ -33,6 +33,7 @@ body {
     grid-column: span 1;
     grid-row: span 1;
     overflow: hidden;
+    position: relative
 }
 
 .image {
@@ -48,7 +49,7 @@ body {
     transition: .3s ease;
     opacity: 0;
     position: relative;
-    transform: translate(0%, -200%);
+    transform: translate(0, -300px);
     text-align: center;
 }
 
@@ -83,6 +84,19 @@ body {
 
 .text-link:hover {
     color: inherit; /* Keep the link color the same when hovered over */
+}
+
+.details-link {
+    color: whitesmoke; /* Make the link color the same as the text color */
+    text-decoration: none; /* Remove the underline */
+    font-size: 18px;
+    font-style: italic;
+    padding: 1px;
+}
+
+.details-link:hover {
+    color: rgba(255, 255, 255, 0.6); /* Keep the link color the same when hovered over */
+    transition: .2s ease;
 }
 
 .github-link {
