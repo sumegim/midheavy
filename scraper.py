@@ -8,7 +8,7 @@ import html
 with open('C:\\Users\\sumeg\\Documents\\repos\\midheavy\\db.txt', 'r') as f:
     urls = f.read().splitlines()
 
-full_refresh = True
+full_refresh = False
 for url in urls:
     id = url.split('/')[-1]
     if not full_refresh and os.path.exists(id):
