@@ -41,12 +41,12 @@ body {
     display: block;
     width: 100%;
     height: auto;
-    transition: .3s ease;
+    transition: .2s ease;
     backface-visibility: hidden;
 }
 
 .middle {
-    transition: .3s ease;
+    transition: .2s ease;
     opacity: 0;
     position: relative;
     transform: translate(0, -300px);
@@ -54,12 +54,13 @@ body {
 }
 
 .tile:hover .middle {
+    transition: .2s ease;
     opacity: 0.9; /* Adjust the opacity to your liking */
     background-color: #000; /* Add a background color to the middle div */
 }
 
 .tile:hover img {
-    transform: scale(1.02);
+    transform: scale(1.03);
 }
 
 .text {
@@ -80,6 +81,7 @@ body {
 .text-link {
     color: inherit; /* Make the link color the same as the text color */
     text-decoration: none; /* Remove the underline */
+    pointer-events: none;
 }
 
 .text-link:hover {
