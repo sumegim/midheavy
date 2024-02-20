@@ -3,12 +3,15 @@ from bs4 import BeautifulSoup
 import os
 import urllib.request
 import html
+import yaml
 
 # Read URLs from db.txt
 with open('C:\\Users\\sumeg\\Documents\\repos\\midheavy\\db.txt', 'r') as f:
     urls = f.read().splitlines()
 
 full_refresh = False
+get_images = False
+
 for url in urls:
     id = url.split('/')[-1]
     if not full_refresh and os.path.exists(id):
@@ -36,16 +39,19 @@ for url in urls:
     # To get the content of the meta tag
     image_url = meta_og_image['content'] if meta_og_image else None
 
-    # Save name and description to a text file
-    with open(f'{id}\{id}.txt', 'w') as f:
-        f.write(f'URL: {url}\nName: {title}\nDescription: {short_description}\nImage URL: {image_url}\n')
+    # Save name and description to a yml file
+    d = {'id': id, 'name': title, 'description': short_description, 'q_rules': '', 'links': [],  'labels': [], 'url': url, 'image_url': image_url, 'notes': ''}
+
+    with open(f'{id}\data.yml', 'w') as f:
+        yaml.dump(d, f, default_flow_style=False, sort_keys=False)
 
     # Assuming 'image_url' is the URL of the image
-    response = requests.get(image_url, stream=True)
+    if get_images:
+        response = requests.get(image_url, stream=True)
 
-    # Check if the request was successful
-    if response.status_code == 200:
-        # Open a file in write mode and write the image content to it
-        with open(f'{id}\image.jpg', 'wb') as file:
-            for chunk in response.iter_content(1024):
-                file.write(chunk)
+        # Check if the request was successful
+        if response.status_code == 200:
+            # Open a file in write mode and write the image content to it
+            with open(f'{id}\image.jpg', 'wb') as file:
+                for chunk in response.iter_content(1024):
+                    file.write(chunk)

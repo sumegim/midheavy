@@ -1,20 +1,20 @@
 import os
+import yaml
 
 template = """
 const container = document.createElement('div');
 container.classList.add('container');
 
-for (let i = 0; i < releases.length; i++) {
+for (let i = 0; i < games.length; i++) {
     const tile = document.createElement('div');
     tile.classList.add('tile');
     
     const link = document.createElement('a');
-    link.setAttribute('href', urls[i]);
+    link.setAttribute('href', games[i].url);
     link.classList.add('text-link'); // Add a class to the link elements
 
-
     const img = document.createElement('img');
-    img.setAttribute('src', releases[i] + '/image.jpg');
+    img.setAttribute('src', games[i].id + '/image.jpg');
 
     tile.appendChild(img);
     
@@ -23,7 +23,7 @@ for (let i = 0; i < releases.length; i++) {
 
     const text = document.createElement('div');
     text.classList.add('text');
-    text.innerText = descs[i];
+    text.innerText = games[i].description;
     link.appendChild(text)
 
     middle.appendChild(link);
@@ -36,30 +36,15 @@ document.body.appendChild(container);
 
 # Get all directories in the current folder
 dirs = [d for d in os.listdir('.') if os.path.isdir(d) and d != '.git' ]
-releases = "const releases = [" + ', '.join([f"'{d}'" for d in dirs]) + "];"
 
-x = ''
+games = []
 for dir in dirs:
-    with open(f'{dir}/{dir}.txt', 'r') as f:
-        x += f'"{f.read().splitlines()[1].split(": ")[1]}", '
-titles ="const titles = [" + x + "];"
+    with open(f'{dir}/data.yml', 'r') as f:
+        g = yaml.load(f, Loader=yaml.FullLoader)
+        games.append(g)
 
-
-y = ''
-for dir in dirs:
-    with open(f'{dir}/{dir}.txt', 'r') as f:
-        y += f'"{f.read().splitlines()[0].split(": ")[1]}", '
-urls ="const urls = [" + y + "];"
-
-z = ''
-for dir in dirs:
-    with open(f'{dir}/{dir}.txt', 'r') as f:
-        z += f'"{f.read().splitlines()[2].split(": ")[1]}", '
-descs ="const descs = [" + z + "];"
-
+data_injection = f'const games = {games}'
 
 # Write the template to a file
 with open('script.js', 'w') as f:
-    f.write(urls + descs + titles + releases + template)
-
-print(dirs)
+    f.write(data_injection + template)
