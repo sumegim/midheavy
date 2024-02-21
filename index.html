@@ -9,7 +9,38 @@
     <link rel="icon" type="image/x-icon" href="favicon.svg">
 </head>
 <body>
+
+
+    <button type="button" class="collapsible">📅</button>
+
+    <div class=content style="background-color: white;">
+        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1uyTwKLrQAMkAGCuQ3_o9VOwe001kOgZNe1oubOnofK_IDuq-qnMSHNWz7HlHEa4kEpSDUx5Xl?gv=true" 
+            style="border: 0" 
+            width="100%" 
+            height="620" 
+            frameborder="0">   
+        </iframe>
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+    
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                } 
+            });
+        }
+    </script>
+
     <script type="text/javascript" src="script.js"></script>
+
     <div class="github-link">
         <a href="https://github.com/sumegim/midheavy">
             <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github">
@@ -17,5 +48,6 @@
             </svg>
         </a>
     </div>
+
 </body>
 </html>

@@ -36,17 +36,19 @@ for (let i = 0; i < games.length; i++) {
     text3.innerText = '~ BGG ~'
     link3.appendChild(text3)
 
-    const link4 = document.createElement('a');
-    link4.setAttribute('href', games[i].url);
-    link4.classList.add('details-link'); // Add a class to the link elements
-    const text4 = document.createElement('div');
-    text4.innerText = '~ Calendar ~'
-    link4.appendChild(text4)
+    // const link4 = document.createElement('a');
+    // link4.addEventListener('click', function() {
+    //     window.open('https://calendar.google.com/calendar/appointments/schedules/AcZssZ1uyTwKLrQAMkAGCuQ3_o9VOwe001kOgZNe1oubOnofK_IDuq-qnMSHNWz7HlHEa4kEpSDUx5Xl?gv=true', 'newwindow', 'width=600,height=600');
+    // });
+    // link4.classList.add('details-link'); // Add a class to the link elements
+    // const text4 = document.createElement('div');
+    // text4.innerText = '~ Calendar ~'
+    // link4.appendChild(text4)
 
     middle.appendChild(link);
     middle.appendChild(link2);
     middle.appendChild(link3);
-    middle.appendChild(link4);
+    // middle.appendChild(link4);
 
     tile.appendChild(img);
     tile.appendChild(middle);
