@@ -152,3 +152,41 @@ body {
     height: 50px;
     opacity: 0.8; /* Make the logo semi-transparent */
 }
+
+@media screen and (max-width: 600px) {
+    .collapsible {
+        font-size: 24px; /* Reduce font size for smaller screens */
+    }
+
+    .container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust grid for smaller screens */
+        grid-auto-rows: 150px; /* Adjust grid row size for smaller screens */
+        margin: 20px 5px; /* Reduce margin for smaller screens */
+        padding: 12px; /* Reduce padding for smaller screens */
+    }
+
+    .container img {
+        border-radius: 6px; /* Reduce border radius for smaller screens */
+    }
+
+    .middle {
+        transition: .2s ease;
+        opacity: 0;
+        position: relative;
+        transform: translate(0, -150px);
+        text-align: center;
+    }
+
+    .tile-label {
+        font-size: 12px; /* Reduce font size for smaller screens */
+    }
+
+    .text {
+        font-size: 12px; /* Reduce font size for smaller screens */
+        padding: 8px 8px; /* Reduce padding for smaller screens */
+    }
+
+    .details-link {
+        font-size: 12px; /* Reduce font size for smaller screens */
+    }
+}
