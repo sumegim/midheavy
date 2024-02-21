@@ -1,4 +1,0 @@
-URL: https://boardgamegeek.com/boardgame/1115/poker
-Name: Poker
-Description: You've got to know when to hold 'em; know when to fold 'em.
-Image URL: https://cf.geekdo-images.com/QhsvR9GY0LbTpj27fairWA__opengraph/img/FFuk1EuC8UkRBQhlznzheUMpbbs=/0x61:509x347/fit-in/1200x630/filters:fill(blur):strip_icc()/pic186610.jpg

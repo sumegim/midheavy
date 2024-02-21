@@ -1,5 +1,0 @@
-URL: https://boardgamegeek.com/boardgame/366013/heat-pedal-metal
-Name: Heat: Pedal to the Metal
-Description: Manage your race car's speed to keep from overheating.
-Image URL: https://cf.geekdo-images.com/-vOrd4bOspibyohYExLqWg__opengraph/img/MVFAnKPe_CLYCz5pTanfu26NFrg=/0x0:1316x691/fit-in/1200x630/filters:strip_icc()/pic6940449.png
-qrules: https://drive.google.com/drive/folders/1z7fa_mLUNYaDUy62B99_L5MrVvHUCnf0?usp=drive_link

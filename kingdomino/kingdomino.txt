@@ -1,4 +1,0 @@
-URL: https://boardgamegeek.com/boardgame/204583/kingdomino
-Name: Kingdomino
-Description: Build a kingdom with varied terrains on domino-shaped tiles in this fast family game.
-Image URL: https://cf.geekdo-images.com/3h9W8BfB_rltQ48EBmHliw__opengraph/img/GUZYuvDHB9Esa7XkZjsh8qvSiN4=/0x0:300x158/fit-in/1200x630/filters:strip_icc()/pic3132685.png

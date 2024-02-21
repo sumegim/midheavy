@@ -1,4 +1,0 @@
-URL: https://boardgamegeek.com/boardgame/11582/schnapsen
-Name: Schnapsen
-Description: Score points by marrying off kings and queens, and by winning value cards in tricks.
-Image URL: https://cf.geekdo-images.com/5vRZB6-mx8pTfhuItDRIvQ__opengraph/img/TwAyTsp4382W7HIe_1BdH6iZhmo=/0x443:734x828/fit-in/1200x630/filters:strip_icc()/pic1216629.jpg
