@@ -14,6 +14,7 @@ body {
     font-size: 48px;
     border-radius: 10px;
     transition: background-color 0.5s;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .active, .collapsible:hover {
@@ -27,6 +28,7 @@ body {
     transition: max-height 0.2s ease-out;
     background-color: #f1f1f1;
     border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(129, 129, 129, 0.5);
 }
 
 .container {
@@ -36,9 +38,9 @@ body {
     grid-gap: 36px;
     grid-auto-flow: dense;
     animation: fadeIn 1s ease-in;
-    margin: 24px; /* This adds a margin around the container */
+    margin: 40px 10px; /* This adds a margin around the container */
     padding: 24px; /* This adds a padding around the container */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add a drop shadow to the container */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Add a drop shadow to the container */
     border-radius: 12px; /* Add a border radius to the container */
 }
 
