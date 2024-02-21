@@ -3,7 +3,7 @@ name: Chess
 description: Checkmate your opponent in this timeless abstract.
 q_rules: 'https://en.wikipedia.org/wiki/Rules_of_chess'
 links: []
-labels: []
+labels: [Classic, Abstract, Two Player, Family Game]
 url: https://boardgamegeek.com/boardgame/171/chess
 image_url: https://cf.geekdo-images.com/0-DjGBOko6RV8zg5ejhYIg__opengraph/img/4T1T8QnJIEWpwM0Z3wgI6Kx9gz4=/0x146:700x513/fit-in/1200x630/filters:strip_icc()/pic260745.jpg
 notes: ''
