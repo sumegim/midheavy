@@ -1,3 +1,4 @@
+import json
 import os
 import yaml
 
@@ -8,6 +9,8 @@ games = []
 for dir in dirs:
     with open(f'{dir}/data.yml', 'r') as f:
         g = yaml.load(f, Loader=yaml.FullLoader)
+        with open(f'{dir}/data.json', 'r') as f2:
+            g['stats'] = json.load(f2)
         games.append(g)
 
 lines = []

@@ -1,3 +1,5 @@
+import json
+import re
 import requests
 from bs4 import BeautifulSoup
 import os
@@ -20,6 +22,23 @@ for url in urls:
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
 
+    script_tag = soup.find('script', text=re.compile('GEEK.geekitemPreload = '))
+
+    # Extract the JSON object
+    json_text = re.search(r'^\s*GEEK.geekitemPreload = ({.*?})\s*;$',
+                        script_tag.string, flags=re.DOTALL | re.MULTILINE).group(1)
+
+    # Parse the JSON object
+    d = json.loads(json_text)
+    data = d['item']['stats']
+    data['minplayers'] = d['item']['minplayers']
+    data['maxplayers'] = d['item']['maxplayers']
+    data['minplaytime'] = d['item']['minplaytime']
+    data['maxplaytime'] = d['item']['maxplaytime']
+    data['yearpublished'] = d['item']['yearpublished']
+    data['description'] = d['item']['description']
+    data['short_description'] = d['item']['short_description']
+
     # Find name, description, and image URL
     # To select the meta tag with property 'og:title'
     meta_og_title = soup.select_one('meta[property="og:title"]')
@@ -29,6 +48,9 @@ for url in urls:
     
     if not os.path.exists(id):
         os.mkdir(id)
+
+    with open(f'{id}\data.json', 'w') as f:
+        json.dump(data, f, indent=2, sort_keys=True)
     
     # To select the meta tag with property 'og:description'
     meta_og_description = soup.select_one('meta[property="og:description"]')
