@@ -89,7 +89,7 @@ body {
     transition: .2s ease;
     opacity: 0;
     position: relative;
-    transform: translate(0, -280px);
+    transform: translate(0, -240px);
     text-align: center;
 }
 
@@ -97,6 +97,66 @@ body {
     transition: .2s ease;
     opacity: 0.9; /* Adjust the opacity to your liking */
     background-color: #000; /* Add a background color to the middle div */
+}
+
+.button-group {
+    background-color: #00000000; /* Add a background color to the middle div */
+    transition: .2s ease;
+    opacity: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    position: absolute;
+    margin: 6px 12px;
+    padding: 4px;
+    font-size: 18px;
+    pointer-events: none;
+    visibility: hidden; /* Hide the link by default */
+    transition: visibility 0s linear 0.1s; /* Delay the visibility change by 0.1s */
+}
+
+.tile:hover .button-group {
+    transition: .2s ease;
+    opacity: 0.9; /* Adjust the opacity to your liking */
+    pointer-events: auto; /* Make the link clickable when the image is hovered */
+    visibility: visible; /* Show the link when the image is hovered */
+    transition-delay: 0.1s; /* delay when the image is hovered */
+    animation: fadeIn 0.2s ease-in; /* Fade in the link when the image is hovered */
+}
+
+.bgg-button {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: whitesmoke;
+    cursor: pointer;
+    padding: 12px;
+    margin: 2px;
+    border: none;
+    text-align: center;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.rules-button {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: whitesmoke;
+    cursor: pointer;
+    padding: 12px;
+    margin: 2px;
+    border: none;
+    text-align: center;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.bgg-button:hover{
+    background-color: #555;
+    transition: .2s ease;
+}
+.rules-button:hover{
+    background-color: #555;
+    transition: .2s ease;
 }
 
 .tile:hover img {
@@ -126,25 +186,6 @@ body {
 
 .text-link:hover {
     color: inherit; /* Keep the link color the same when hovered over */
-}
-
-.details-link {
-    color: whitesmoke; /* Make the link color the same as the text color */
-    text-decoration: none; /* Remove the underline */
-    font-size: 18px;
-    font-style: italic;
-    padding: 1px;
-    pointer-events: none;
-    visibility: hidden; /* Hide the link by default */
-    transition: visibility 0s linear 0.1s; /* Delay the visibility change by 0.1s */
-
-}
-
-.tile:hover .details-link {
-    pointer-events: auto; /* Make the link clickable when the image is hovered */
-    visibility: visible; /* Show the link when the image is hovered */
-    transition-delay: 0.1s; /* delay when the image is hovered */
-    animation: fadeIn 0.2s ease-in; /* Fade in the link when the image is hovered */
 }
 
 .tile:hover .text-link {

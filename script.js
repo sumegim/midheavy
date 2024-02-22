@@ -25,25 +25,27 @@ function createContainerGroupByLabel(_label) {
         text.classList.add('text');
         text.innerText = games[i].description;
         link.appendChild(text)
-    
-        const link2 = document.createElement('a');
-        link2.setAttribute('href', games[i].q_rules);
-        link2.classList.add('details-link'); // Add a class to the link elements
-        const text2 = document.createElement('div');
-        text2.innerText = '~ Rules ~'
-        link2.appendChild(text2)
-    
-        const link3 = document.createElement('a');
-        link3.setAttribute('href', games[i].url);
-        link3.classList.add('details-link'); // Add a class to the link elements
-        const text3 = document.createElement('div');
-        text3.innerText = '~ BGG ~'
-        link3.appendChild(text3)
+
+        const button_group = document.createElement('div');
+        button_group.classList.add('button-group');
+        const bgg_button = document.createElement('button');
+        bgg_button.classList.add('bgg-button');
+        bgg_button.innerHTML = '<img src="https://boardgamegeek.com/favicon.ico">'
+        bgg_button.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.open(games[i].url);
+        });
+        const rules_button = document.createElement('button');
+        rules_button.classList.add('rules-button');
+        rules_button.innerHTML = '<img src="https://drive.google.com/favicon.ico">'
+        rules_button.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.open(games[i].q_rules);
+        });
+        button_group.appendChild(bgg_button);
+        button_group.appendChild(rules_button);
 
         middle.appendChild(link);
-        middle.appendChild(link2);
-        middle.appendChild(link3);
-        // middle.appendChild(link4);
     
         const label = document.createElement('span');
         label.textContent = _label; 
@@ -55,6 +57,7 @@ function createContainerGroupByLabel(_label) {
         if (_label !== "") {
             tile.appendChild(label);
         }
+        tile.appendChild(button_group);
         tile.appendChild(middle);
         container.appendChild(tile);
     }
