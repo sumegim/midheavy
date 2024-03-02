@@ -1,7 +1,7 @@
 id: wizard
 name: Wizard
 description: Predict how many tricks you'll win, with the help of Wizards and Jesters.
-q_rules: ''
+q_rules: 'https://drive.google.com/drive/folders/1EXAvSlZuwNdz2DFB42oy-ekOLnmNSUyR?usp=drive_link'
 links: []
 labels: [Card Game]
 url: https://boardgamegeek.com/boardgame/1465/wizard
