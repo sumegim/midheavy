@@ -1,6 +1,7 @@
 import json
 import os
 import yaml
+import pandas as pd
 
 # Get all directories in the current folder
 dirs = [d for d in os.listdir('.') if os.path.isdir(d) and d != '.git' ]
@@ -21,3 +22,9 @@ lines[0] = f'const games = {games};\n'
 # Write the template to a file
 with open('script.js', 'w') as f:
     f.writelines(lines)
+
+# Normalize the games dictionary and convert it to a DataFrame
+df = pd.json_normalize(games)
+
+# Write the DataFrame to a CSV file
+df.to_csv('games.csv', index=False)
