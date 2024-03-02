@@ -12,7 +12,7 @@ with open('C:\\Users\\sumeg\\Documents\\repos\\midheavy\\db.txt', 'r') as f:
     urls = f.read().splitlines()
 
 full_refresh = False
-get_images = False
+get_images = True
 
 for url in urls:
     id = url.split('/')[-1]
