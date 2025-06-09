@@ -3,8 +3,6 @@ import re
 import requests
 from bs4 import BeautifulSoup
 import os
-import urllib.request
-import html
 import yaml
 
 # Read URLs from db.txt
