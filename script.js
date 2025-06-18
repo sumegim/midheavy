@@ -13,7 +13,7 @@ function createContainerGroupByLabel(_label, openByDefault = false) {
 
     // Set custom title
     if (_label === "") {
-        collapsibleBtn.innerText = "All Games (by rating)";
+        collapsibleBtn.innerText = "All Games";
     } else if (_label === "New") {
         collapsibleBtn.innerText = "Whats new?";
     } else if (_label === "Expansion") {
