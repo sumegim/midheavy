@@ -1,8 +1,7 @@
 id: fort
 name: Fort
-description: Build the most awesome fort while making friends, collecting toys, and
-  eating pizza.
-q_rules: ''
+description: Build the most awesome fort while making friends, collecting toys, and eating pizza.
+q_rules: 'https://drive.google.com/drive/folders/10Xiw9AFnJ38CMAQq9dxlPdNI-DxBYDQS?usp=drive_link'
 links: []
 labels: [Leder Games, Deck Building, Hand Management, Kids, Strategy]
 url: https://boardgamegeek.com/boardgame/296912/fort
