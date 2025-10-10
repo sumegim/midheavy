@@ -1,8 +1,7 @@
 id: nightmare-productions
 name: Nightmare Productions
-description: Make the best (and worst!) horror films, bidding on directors, creatures,
-  and more.
-q_rules: ''
+description: Make the best films, bidding on directors, actors, and more.
+q_rules: 'https://drive.google.com/drive/folders/17PQctZW-SC9DefxgKeSmWTuH29M-_Qbb?usp=drive_link'
 links: []
 labels: [Reiner Knizia, Strategy]
 url: https://boardgamegeek.com/boardgame/904/nightmare-productions

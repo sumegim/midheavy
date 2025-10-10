@@ -1,7 +1,7 @@
 id: rheinlander
 name: "Rheinl\xE4nder"
 description: Only the duke with the best duchies will control the Rhine!
-q_rules: ''
+q_rules: 'https://drive.google.com/drive/folders/1d-torMCgRSmODJgu_A6RS_J3pAugfF85?usp=drive_link'
 links: []
 labels: [Reiner Knizia, Strategy]
 url: https://boardgamegeek.com/boardgame/111/rheinlander
