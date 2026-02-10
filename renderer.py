@@ -8,6 +8,8 @@ dirs = [d for d in os.listdir('.') if os.path.isdir(d) and d != '.git' ]
 
 games = []
 for dir in dirs:
+    if dir == '_dump':
+        continue
     with open(f'{dir}/data.yml', 'r') as f:
         g = yaml.load(f, Loader=yaml.FullLoader)
         with open(f'{dir}/data.json', 'r') as f2:
