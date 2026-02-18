@@ -1,9 +1,10 @@
 import json
 import re
-import requests
+import cloudscraper
 from bs4 import BeautifulSoup
 import os
 import yaml
+import time
 
 # Read URLs from db.txt
 with open('C:\\Users\\sumeg\\Documents\\repos\\midheavy\\db.txt', 'r') as f:
@@ -12,15 +13,37 @@ with open('C:\\Users\\sumeg\\Documents\\repos\\midheavy\\db.txt', 'r') as f:
 full_refresh = False
 get_images = True
 
+# Create a cloudscraper session to bypass Cloudflare protection
+session = cloudscraper.create_scraper(
+    browser={
+        'browser': 'chrome',
+        'platform': 'windows',
+        'mobile': False
+    }
+)
+
 for url in urls:
     id = url.split('/')[-1]
     if not full_refresh and os.path.exists(id):
         continue
     print("Loading: " + url)
-    response = requests.get(url)
+    
+    # Add delay to avoid rate limiting
+    time.sleep(2)
+    
+    response = session.get(url)
+    
+    if response.status_code != 200:
+        print(f"Error: Received status code {response.status_code} for {id}, skipping...")
+        continue
+    
     soup = BeautifulSoup(response.text, 'html.parser')
 
     script_tag = soup.find('script', text=re.compile('GEEK.geekitemPreload = '))
+
+    if script_tag is None:
+        print(f"Warning: Could not find script tag for {id}, skipping...")
+        continue
 
     # Extract the JSON object
     json_text = re.search(r'^\s*GEEK.geekitemPreload = ({.*?})\s*;$',
@@ -67,7 +90,7 @@ for url in urls:
 
     # Assuming 'image_url' is the URL of the image
     if get_images:
-        response = requests.get(image_url, stream=True)
+        response = session.get(image_url, stream=True)
 
         # Check if the request was successful
         if response.status_code == 200:
